@@ -2,7 +2,7 @@
 
 ###############################################
 # change log 20150923 - first version
-#
+# change log 20151001 - add EPEL Repository in script cause npm
 #
 ###############################################
 
@@ -13,6 +13,14 @@
 #echo ""
 #echo -e "\033[33m"
 #apt-get   update
+
+# Install EPEL Repository - cause npm need
+echo -e "\033[32m"
+echo ""
+echo "==== Install EPEL Repository ===="
+echo ""
+echo -e "\033[34m"
+sudo  yum  install   epel-release   -y
 
 
 # Install python 3.4
@@ -66,10 +74,10 @@ sudo yum -y install python-devel  python34-devel
 echo -e "\033[32m"
 echo ""
 echo ""
-echo "==== Install python and python3 develop packages  ===="
+echo "==== Install jupyterhub and jupyter notebook  ===="
 echo ""
 echo -e "\033[0m"
-sudo  pip3  install  jupyterhub ipython[notebook]
+sudo  pip3  install  jupyterhub ipython[notebook] paramiko
 
 # Display python version
 echo -e "\033[32m"

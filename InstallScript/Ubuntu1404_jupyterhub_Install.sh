@@ -54,6 +54,7 @@ echo ""
 echo "\033[0m"
 sudo   pip3   install   jupyterhub
 sudo   pip3   install   notebook
+sudo   pip3   install   paramiko
 
 #
 echo "\033[32m"
