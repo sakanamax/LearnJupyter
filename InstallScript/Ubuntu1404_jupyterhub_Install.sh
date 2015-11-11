@@ -4,6 +4,7 @@
 #
 # Edit by sakana 20150923
 # You should have sudo permission with your user
+# Changelog 20151110 - Add ansible and paramiko packages
 ###############################
 # Update source
 echo "\033[32m"
@@ -13,13 +14,13 @@ echo ""
 echo "\033[33m"
 sudo apt-get   update
 
-# Install python-pip and python3-pip
+# Install python-pip python3-pip and ansible
 echo "\033[32m"
 echo ""
-echo "==== Start install python-pip and python3-pip ===="
+echo "==== Start install python-pip python3-pip and ansible ===="
 echo ""
 echo "\033[34m"
-sudo  apt-get  -y  install  python-pip  python3-pip
+sudo  apt-get  -y  install  python-pip  python3-pip ansible
 
 # Install libzmq3, python and python3 develop packages
 echo "\033[32m"

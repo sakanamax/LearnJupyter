@@ -3,6 +3,7 @@
 ###############################################
 # change log 20150923 - first version
 # change log 20151001 - add EPEL Repository in script cause npm
+# change log 20151110 - add paramiko and ansible install
 #
 ###############################################
 
@@ -30,6 +31,16 @@ echo "==== Install python 3.4 ===="
 echo ""
 echo -e "\033[33m"
 sudo  yum  install   python34   -y
+
+
+# Install Ansible
+echo -e "\033[32m"
+echo ""
+echo "==== Install ansible ===="
+echo ""
+echo -e "\033[33m"
+sudo  yum  install   ansible   -y
+
 
 
 # Install require package for jupyterhub
