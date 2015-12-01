@@ -1,0 +1,44 @@
+# Jupyterhub / Ansible on Centos 7.0
+FROM centos:7
+# Author
+MAINTAINER Fei Yeh <fyeh@icair.org>
+# Install Enterprise Repository
+RUN \
+  yum install epel-release -y
+
+# Install Python and pre-requisite packages
+RUN \
+  yum install -y \
+   passwd \
+   python-devel \
+   python34 \
+   python34-devel \
+   zlib-devel \
+   bzip2-devel \
+   openssl-devel \
+   ncurses-devel \
+   sqlite-devel \
+   readline-devel \
+   tk-devel \
+   gdbm-devel \
+   db4-devel \
+   libpcap-devel \
+   xz-devel \
+   npm \
+   wget && \
+  npm install -g configurable-http-proxy && \
+  wget https://bootstrap.pypa.io/get-pip.py && \
+  python3.4 get-pip.py
+
+# Install Jupyterhub
+RUN pip3  install  jupyterhub ipython[notebook]
+
+#expose ports
+EXPOSE 8000
+
+# create user
+RUN useradd -m ansible && echo "ansible:newpass"|chpasswd
+
+
+# Define default command.
+CMD ["jupyterhub"]
