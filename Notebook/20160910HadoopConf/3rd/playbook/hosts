@@ -1,0 +1,3 @@
+# yourHostAlias   ansible_ssh_host=FQDN_or_IP
+
+master ansible_host=   ansible_ssh_pass=

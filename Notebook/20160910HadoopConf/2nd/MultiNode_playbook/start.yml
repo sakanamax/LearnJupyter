@@ -1,0 +1,16 @@
+- name: Get fact from all
+  hosts: all
+  tasks:
+    - setup: filter=ansible_distribution
+
+- name: Add Slaves to spark/conf/slaves
+  hosts: master
+  tasks:
+    - template: src=templates/slaves dest=./spark/conf/slaves
+    - lineinfile: line="export  SPARK_MASTER_IP={{ ansible_all_ipv4_addresses[1] }}" dest=./spark/conf/spark-env.sh create=yes state=present
+    - command: ./spark/sbin/start-all.sh
+
+
+#    - shell: touch ./${ansible_all_ipv4_addresses}.txt
+#    - shell: touch ./{{ansible_all_ipv4_addresses}}.txt2
+#    - shell: touch ./$ansible_all_ipv4_addresses.txt3

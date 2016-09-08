@@ -1,0 +1,14 @@
+# yourHostAlias   ansible_ssh_host=FQDN_or_IP
+# ansiable_ssh_pass=
+
+master  ansible_host=   ansible_ssh_pass=
+
+slave   ansible_host=   ansible_ssh_pass=
+slave2  ansible_host=   ansible_ssh_pass=
+
+[master]
+master
+
+[slaves]
+slave
+slave2
