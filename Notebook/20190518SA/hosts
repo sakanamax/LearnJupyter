@@ -1,0 +1,20 @@
+# syntax: servername  options
+# 常用選項
+# ansible_host -- Remote Host IP
+# ansible_user -- Remote SSH User Name
+# ansible_port -- ssh port
+# ansible_ssh_private_key_file -- SSH Key
+# ansible_ssh_pass -- ssh password
+
+# 如果有定義到 ansible.cfg 的 [ defaults ] 就可以不列出
+# testserver   ansible_host=xxx.xxx.xxx.xxx ansible_port=xx ansible_ssh_pass
+
+#test ansible_host= ansible_port= ansible_ssh_pass=openSUSE
+
+test ansible_port=  ansible_host=  ansible_ssh_pass=openSUSE
+
+# You could use diff key or password to diff resource | 針對不同的平台可能 key 以及使用者不一樣可以額外指定
+
+# You could use group too | 也可以用群組的方式
+[summit]
+test
